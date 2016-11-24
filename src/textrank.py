@@ -10,6 +10,8 @@ from nltk.stem import WordNetLemmatizer
 import networkx as nx
 from nltk.collocations import * 
 from nltk.stem.porter import *
+from os.path import isfile, join
+import glob
 
 tagger = nltk.tag.perceptron.PerceptronTagger()
 wnl = WordNetLemmatizer()
@@ -152,7 +154,7 @@ def joincollocbi(tagged):
 
 blacklist = []
 fname=sys.argv[1]
-articles = os.listdir(fname)
+articles = glob.glob(fname + '/*.txt')
 FOLDER = 'keywords-'+fname+'-textrank'
 if not os.path.exists(FOLDER): os.makedirs(FOLDER)
 
