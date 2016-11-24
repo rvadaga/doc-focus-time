@@ -1,0 +1,4 @@
+.DS_Store
+announcements
+data/**
+backup.log
